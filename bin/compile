@@ -63,7 +63,7 @@ CONDA_ENV="root"
 # First check if environment.yml exists and if so use with conda-env
 if [ -e "$BUILD_DIR/environment.yml" ]; then
     echo "-----> Installing conda environment from environment.yml..."
-    $CONDA_BIN/conda env update -n root -f "$BUILD_DIR/environment.yml"
+    $CONDA_BIN/conda env update --quiet -n root -f "$BUILD_DIR/environment.yml"
 else
     # No conda environment so use traditional requirements files.
     if [ -e "$BUILD_DIR/conda_requirements.txt" ]; then
